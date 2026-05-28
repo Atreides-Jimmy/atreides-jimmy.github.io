@@ -5,6 +5,7 @@ export const en: Record<string, string> = {
   'nav.projects': 'Projects',
   'nav.contact': 'Contact',
   'nav.about': 'About',
+  'nav.hobbies': 'Hobbies',
   'lang.switch': '中文',
   'home.greeting': 'Welcome to My Domain',
   'home.desc': 'Developer · Thinker',
@@ -22,4 +23,7 @@ export const en: Record<string, string> = {
   'about.description': 'A developer who loves code and words, finding balance between logic and poetry.',
   'footer.rights': '© 2024 Atreides-Jimmy. All rights reserved.',
   'footer.motto': '"Fear is the mind-killer."',
+  'hobbies.title': 'Hobbies',
+  'hobbies.subtitle': 'Beyond the code',
+  'hobbies.go': 'Go',
 }

@@ -5,6 +5,7 @@ export const ru: Record<string, string> = {
   'nav.projects': 'Проекты',
   'nav.contact': 'Контакты',
   'nav.about': 'Обо мне',
+  'nav.hobbies': 'Хобби',
   'lang.switch': 'RU',
   'home.greeting': 'Добро пожаловать',
   'home.desc': 'Разработчик · Мыслитель',
@@ -22,4 +23,7 @@ export const ru: Record<string, string> = {
   'about.description': 'Разработчик, любящий код и слово, находящий баланс между логикой и поэзией.',
   'footer.rights': '© 2024 Atreides-Jimmy. Все права защищены.',
   'footer.motto': '"Страх — убийца разума."',
+  'hobbies.title': 'Хобби',
+  'hobbies.subtitle': 'За пределами кода',
+  'hobbies.go': 'Го',
 }

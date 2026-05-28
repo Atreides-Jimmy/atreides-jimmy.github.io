@@ -5,6 +5,7 @@ export const zh: Record<string, string> = {
   'nav.projects': '我的项目',
   'nav.contact': '联系我',
   'nav.about': '关于',
+  'nav.hobbies': '爱好',
   'lang.switch': 'EN',
   'home.greeting': '欢迎来到我的领地',
   'home.desc': '开发者 · 思考者',
@@ -22,4 +23,7 @@ export const zh: Record<string, string> = {
   'about.description': '一个热爱代码与文字的开发者，在逻辑与诗意之间寻找平衡。',
   'footer.rights': '© 2024 Atreides-Jimmy. 保留所有权利。',
   'footer.motto': '"恐惧是思维的杀手。"',
+  'hobbies.title': '爱好',
+  'hobbies.subtitle': '工作之外的世界',
+  'hobbies.go': '围棋',
 }

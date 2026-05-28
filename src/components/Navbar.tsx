@@ -1,12 +1,14 @@
 import { useLangStore } from '@/store/langStore'
 import { Link, useLocation } from 'react-router-dom'
-import { Home, FolderGit2, Mail, User } from 'lucide-react'
+import { Home, FolderGit2, Mail, User, Heart } from 'lucide-react'
 import LangSwitch from './LangSwitch'
 
 const navItems = [
   { path: '/', key: 'nav.home', icon: Home },
   { path: '/projects', key: 'nav.projects', icon: FolderGit2 },
+  { path: '/hobbies', key: 'nav.hobbies', icon: Heart },
   { path: '/contact', key: 'nav.contact', icon: Mail },
+  { path: '/about', key: 'nav.about', icon: User },
 ]
 
 export default function Navbar() {
@@ -33,7 +35,7 @@ export default function Navbar() {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`flex items-center gap-2 px-4 py-2 rounded-sm text-sm font-body
+                className={`flex items-center gap-2 px-3 py-2 rounded-sm text-sm font-body
                   transition-all duration-300
                   ${isActive
                     ? 'text-sand-300 bg-sand-300/10'

@@ -1,7 +1,5 @@
 import { useLangStore } from '@/store/langStore'
 import PoemFrame from '@/components/PoemFrame'
-import NavCard from '@/components/NavCard'
-import { FolderGit2, Mail, User } from 'lucide-react'
 
 export default function Home() {
   const { t } = useLangStore()
@@ -33,15 +31,7 @@ export default function Home() {
 
         <PoemFrame />
 
-        <div className="divider-line max-w-xs mx-auto opacity-0 animate-fade-in-delay-3" />
-
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-lg mx-auto">
-          <NavCard to="/projects" labelKey="nav.projects" icon={FolderGit2} delay={1} />
-          <NavCard to="/contact" labelKey="nav.contact" icon={Mail} delay={2} />
-          <NavCard to="/about" labelKey="nav.about" icon={User} delay={3} />
-        </div>
-
-        <div className="pt-8 opacity-0 animate-fade-in-delay-4">
+        <div className="pt-8 opacity-0 animate-fade-in-delay-3">
           <p className="font-display text-xs text-sand-300/30 tracking-widest italic">
             {t('footer.motto')}
           </p>

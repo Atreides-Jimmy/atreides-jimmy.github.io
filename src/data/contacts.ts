@@ -17,8 +17,8 @@ export const contacts: ContactItem[] = [
   {
     id: 'email',
     label: 'Email',
-    value: 'jimmy@example.com',
-    url: 'mailto:jimmy@example.com',
+    value: 'tom069648@gmail.com',
+    url: 'mailto:tom069648@gmail.com',
     icon: 'mail',
   },
 ]

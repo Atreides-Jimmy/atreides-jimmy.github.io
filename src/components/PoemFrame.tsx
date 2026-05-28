@@ -1,5 +1,3 @@
-import { useLangStore } from '@/store/langStore'
-
 const poemLines = [
   'Do you wrestle with dreams?',
   'Do you contend with shadows?',
@@ -12,8 +10,6 @@ const poemLines = [
 ]
 
 export default function PoemFrame() {
-  const { t } = useLangStore()
-
   return (
     <div className="poem-frame max-w-xl mx-auto opacity-0 animate-fade-in-delay-2">
       <div className="poem-frame-inner relative">
@@ -32,9 +28,6 @@ export default function PoemFrame() {
         </div>
         <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-sand-300/20 to-transparent" />
       </div>
-      <p className="mt-4 text-right font-display text-sm text-sand-300/40 tracking-wider">
-        {t('poem.author')}
-      </p>
     </div>
   )
 }

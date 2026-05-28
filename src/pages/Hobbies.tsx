@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import { useLangStore } from '@/store/langStore'
-import GoBoard from '@/components/GoBoard'
-import { CircleDot } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import { GoBoardThumbnail, parseSGF } from '@/components/GoBoard'
+import { CircleDot, ChevronRight } from 'lucide-react'
 
 interface GoGameEntry {
   id: string
@@ -11,14 +12,14 @@ interface GoGameEntry {
   title: { zh: string; en: string; ru: string }
 }
 
-interface GoGameData extends GoGameEntry {
+interface GoGameCard extends GoGameEntry {
   sgfContent: string
   reviewContent: string
 }
 
 export default function Hobbies() {
   const { lang, t } = useLangStore()
-  const [games, setGames] = useState<GoGameData[]>([])
+  const [games, setGames] = useState<GoGameCard[]>([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -87,32 +88,38 @@ export default function Hobbies() {
                 </p>
               </div>
             ) : (
-              <div className="space-y-12">
-                {games.map((game) => (
-                  <div key={game.id} className="nav-card rounded-sm p-6 sm:p-8">
-                    <h3 className="font-display text-xl text-sand-50/80 tracking-wide mb-6">
-                      {game.title[lang]}
-                    </h3>
-
-                    <div className="flex flex-col lg:flex-row gap-8 items-start">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {games.map((game) => {
+                  const { meta, moves } = parseSGF(game.sgfContent)
+                  return (
+                    <Link
+                      key={game.id}
+                      to={`/hobbies/go/${game.id}`}
+                      className="nav-card rounded-sm p-5 flex items-center gap-4 group"
+                    >
                       <div className="flex-shrink-0">
-                        <GoBoard sgf={game.sgfContent} />
+                        <GoBoardThumbnail sgf={game.sgfContent} />
                       </div>
-
-                      {game.reviewContent && (
-                        <div className="flex-1 min-w-0">
-                          <div className="poem-frame">
-                            <div className="poem-frame-inner relative">
-                              <p className="font-body text-sand-50/70 leading-relaxed whitespace-pre-line">
-                                {game.reviewContent}
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                ))}
+                      <div className="flex-1 min-w-0">
+                        <h3 className="font-display text-lg text-sand-50/80 tracking-wide mb-2
+                          group-hover:text-sand-300 transition-colors">
+                          {game.title[lang]}
+                        </h3>
+                        {(meta.black || meta.white) && (
+                          <p className="font-body text-xs text-sand-50/40 mb-1">
+                            ● {meta.black} vs ○ {meta.white}
+                          </p>
+                        )}
+                        <p className="font-body text-xs text-sand-300/30">
+                          {moves.length} {lang === 'zh' ? '手' : lang === 'ru' ? 'ходов' : 'moves'}
+                          {meta.date && ` · ${meta.date}`}
+                        </p>
+                      </div>
+                      <ChevronRight className="w-4 h-4 text-sand-300/20
+                        group-hover:text-sand-300/60 transition-colors flex-shrink-0" />
+                    </Link>
+                  )
+                })}
               </div>
             )}
           </section>

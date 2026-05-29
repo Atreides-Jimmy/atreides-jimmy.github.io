@@ -15,18 +15,18 @@ export const projects: Project[] = [
       en: 'A VS Code extension for visualizing and analyzing molecular structures directly in the editor, supporting multiple chemical file formats.',
       ru: 'Расширение VS Code для визуализации и анализа молекулярных структур прямо в редакторе, поддерживающее множество форматов химических файлов.',
     },
-    tech: ['TypeScript', 'VS Code Extension API', 'WebGL', '3Dmol.js'],
+    tech: ['TypeScript', 'VS Code Extension API', '3Dmol.js'],
     url: 'https://github.com/Atreides-Jimmy/Molecular-Viewer-on-VScode',
   },
   {
     id: 'quantum-chemistry-cn',
     title: { zh: 'Quantum Chemistry Chinese', en: 'Quantum Chemistry Chinese', ru: 'Quantum Chemistry Chinese' },
     description: {
-      zh: '量子化学中文资料合集，涵盖笔记、公式推导与学习资源，助力中文读者理解量子化学核心概念。',
-      en: 'A collection of quantum chemistry resources in Chinese, covering notes, formula derivations, and learning materials for Chinese-speaking readers.',
-      ru: 'Коллекция материалов по квантовой химии на китайском языке, включающая заметки, выводы формул и учебные материалы для китайскоязычных читателей.',
+      zh: 'Levine所著《量子化学》的中文版，包含译者（我）的一些疑问和思考，助力中文读者理解量子化学核心概念。',
+      en: 'The Chinese edition of Quantum Chemistry by Levine includes the translator’s personal questions and reflections, helping Chinese readers fully comprehend the core concepts of quantum chemistry.',
+      ru: 'Китайское издание книги «Квантовая химия» Левина содержит вопросы и размышления переводчика, помогая китайским читателям разобраться в основных понятиях квантовой химии.',
     },
-    tech: ['LaTeX', 'Markdown', 'Quantum Chemistry'],
+    tech: ['LaTeX', 'Quantum Chemistry'],
     url: 'https://github.com/Atreides-Jimmy/Quantum-Chemistry-Chinese',
   },
 ]

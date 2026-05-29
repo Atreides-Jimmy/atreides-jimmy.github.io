@@ -373,7 +373,8 @@ Currently only Go is implemented. To add another hobby category:
 |----------------|---------|-------|
 | Poem text | `src/components/PoemFrame.tsx` | ❌ |
 | All UI text (3 languages) | `src/i18n/{zh,en,ru}.ts` | ❌ |
-| About page content | `src/i18n/{zh,en,ru}.ts` | ❌ |
+| About page content | `public/about/{zh,en,ru}.md` | ❌ |
+| About page avatar | `public/avatar.svg` | ❌ |
 | Home page name/subtitle/motto | `src/i18n/{zh,en,ru}.ts` | ❌ |
 | Projects list | `src/data/projects.ts` | ❌ |
 | Contact info | `src/data/contacts.ts` | ❌ |
@@ -386,7 +387,8 @@ Currently only Go is implemented. To add another hobby category:
 |-------------|------|-----------|
 | 诗歌内容 | `src/components/PoemFrame.tsx` | ❌ |
 | 所有界面文案（三语） | `src/i18n/{zh,en,ru}.ts` | ❌ |
-| 关于页面内容 | `src/i18n/{zh,en,ru}.ts` | ❌ |
+| 关于页面内容 | `public/about/{zh,en,ru}.md` | ❌ |
+| 关于页面头像 | `public/avatar.svg` | ❌ |
 | 主页名称/副标题/格言 | `src/i18n/{zh,en,ru}.ts` | ❌ |
 | 项目列表 | `src/data/projects.ts` | ❌ |
 | 联系方式 | `src/data/contacts.ts` | ❌ |

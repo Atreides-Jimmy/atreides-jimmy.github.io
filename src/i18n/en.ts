@@ -1,6 +1,6 @@
 export const en: Record<string, string> = {
   'site.title': 'Atreides-Jimmy',
-  'site.subtitle': 'Still the Game of Humanity',
+  'site.subtitle': 'Investigate Things, Extend Knowledge',
   'nav.home': 'Home',
   'nav.projects': 'Projects',
   'nav.contact': 'Contact',
@@ -26,4 +26,5 @@ export const en: Record<string, string> = {
   'hobbies.title': 'Hobbies',
   'hobbies.subtitle': 'Beyond the code',
   'hobbies.go': 'Go',
+  'hobbies.go.intro': 'Go is an extraordinarily complex strategy game that embodies human philosophy and nature. In the age of AI dominance, the space of possible moves has expanded immensely. Yet humans, unable to calculate through nearly infinite possibilities, have developed diverse styles — relying on personal preference, cognition, and experience to confront boundless problems with limited calculation. This is the human Go. In the AI era, only by grasping the essence of "human Go" can one build upon the past and triumph — in Go, and beyond.',
 }

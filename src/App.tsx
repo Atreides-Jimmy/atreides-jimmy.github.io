@@ -5,6 +5,7 @@ import Projects from "@/pages/Projects";
 import Contact from "@/pages/Contact";
 import About from "@/pages/About";
 import Hobbies from "@/pages/Hobbies";
+import GoHobby from "@/pages/GoHobby";
 import GoGameDetail from "@/pages/GoGameDetail";
 
 export default function App() {
@@ -15,6 +16,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/hobbies" element={<Hobbies />} />
+          <Route path="/hobbies/go" element={<GoHobby />} />
           <Route path="/hobbies/go/:id" element={<GoGameDetail />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />

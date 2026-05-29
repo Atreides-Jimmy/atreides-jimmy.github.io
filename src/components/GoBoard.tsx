@@ -45,12 +45,78 @@ const STAR_POINTS = [
   [15, 3], [15, 9], [15, 15],
 ]
 
+const DIRS = [[0, 1], [0, -1], [1, 0], [-1, 0]]
+
+function getGroup(
+  board: (0 | 1 | 2)[][],
+  x: number,
+  y: number
+): { stones: [number, number][]; liberties: number } {
+  const color = board[y][x]
+  if (color === 0) return { stones: [], liberties: 0 }
+
+  const visited = new Set<string>()
+  const stones: [number, number][] = []
+  let liberties = 0
+  const queue: [number, number][] = [[x, y]]
+
+  while (queue.length > 0) {
+    const [cx, cy] = queue.pop()!
+    const key = `${cx},${cy}`
+    if (visited.has(key)) continue
+    visited.add(key)
+
+    if (board[cy][cx] === 0) {
+      liberties++
+      continue
+    }
+    if (board[cy][cx] !== color) continue
+
+    stones.push([cx, cy])
+    for (const [dx, dy] of DIRS) {
+      const nx = cx + dx
+      const ny = cy + dy
+      if (nx >= 0 && nx < BOARD_SIZE && ny >= 0 && ny < BOARD_SIZE && !visited.has(`${nx},${ny}`)) {
+        queue.push([nx, ny])
+      }
+    }
+  }
+
+  return { stones, liberties }
+}
+
 function buildBoard(moves: Move[], upTo: number): (0 | 1 | 2)[][] {
   const board: (0 | 1 | 2)[][] = Array.from({ length: BOARD_SIZE }, () => Array(BOARD_SIZE).fill(0))
+
   for (let i = 0; i < upTo; i++) {
     const m = moves[i]
-    if (m) board[m.y][m.x] = m.color === 'B' ? 1 : 2
+    if (!m) continue
+
+    const stoneVal: 1 | 2 = m.color === 'B' ? 1 : 2
+    const opponentVal: 1 | 2 = m.color === 'B' ? 2 : 1
+    board[m.y][m.x] = stoneVal
+
+    for (const [dx, dy] of DIRS) {
+      const nx = m.x + dx
+      const ny = m.y + dy
+      if (nx >= 0 && nx < BOARD_SIZE && ny >= 0 && ny < BOARD_SIZE && board[ny][nx] === opponentVal) {
+        const group = getGroup(board, nx, ny)
+        if (group.liberties === 0) {
+          for (const [sx, sy] of group.stones) {
+            board[sy][sx] = 0
+          }
+        }
+      }
+    }
+
+    const selfGroup = getGroup(board, m.x, m.y)
+    if (selfGroup.liberties === 0) {
+      for (const [sx, sy] of selfGroup.stones) {
+        board[sy][sx] = 0
+      }
+    }
   }
+
   return board
 }
 

@@ -1,6 +1,6 @@
 export const zh: Record<string, string> = {
   'site.title': 'Atreides-Jimmy',
-  'site.subtitle': '始终仍是人类的游戏',
+  'site.subtitle': '格物致知',
   'nav.home': '首页',
   'nav.projects': '我的项目',
   'nav.contact': '联系我',
@@ -22,8 +22,9 @@ export const zh: Record<string, string> = {
   'about.subtitle': '了解我的故事',
   'about.description': '一个热爱代码与文字的开发者，在逻辑与诗意之间寻找平衡。',
   'footer.rights': '© 2024 Atreides-Jimmy. 保留所有权利。',
-  'footer.motto': '"恐惧是思维的杀手。"',
+  'footer.motto': '"恐惧是思维杀手。"',
   'hobbies.title': '爱好',
   'hobbies.subtitle': '工作之外的世界',
   'hobbies.go': '围棋',
+  'hobbies.go.intro': '围棋是极为复杂的策略游戏，体现了人类的哲学和本性。在如今AI称霸的时代，围棋的行棋空间极大地扩展，而人类面对几乎无尽的行棋可能无法算尽，便产生了种种风格，基于人类自身的喜好、认知与经验，用有限的算路应对无限的问题。这便是人类的围棋。在AI的时代，只有把握"人类的围棋"这一本质，才能继往开来，克敌制胜，无论是围棋，还是其他。',
 }

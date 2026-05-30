@@ -54,7 +54,7 @@ export default function About() {
         ) : (
           <div className="poem-frame">
             <div className="poem-frame-inner relative">
-              <div className="font-body text-sand-50/70 leading-relaxed whitespace-pre-line">
+              <div className="font-body text-sand-50/70 leading-relaxed whitespace-pre-line text-center">
                 {content}
               </div>
             </div>

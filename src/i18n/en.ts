@@ -27,4 +27,6 @@ export const en: Record<string, string> = {
   'hobbies.subtitle': 'Beyond the code',
   'hobbies.go': 'Go',
   'hobbies.go.intro': 'Go is an extraordinarily complex strategy game that embodies human philosophy and nature. In the age of AI dominance, the space of possible moves has expanded immensely. Yet humans, unable to calculate through nearly infinite possibilities, have developed diverse styles — relying on personal preference, cognition, and experience to confront boundless problems with limited calculation. This is the human Go. In the AI era, only by grasping the essence of "human Go" can one build upon the past and triumph — in Go, and beyond.',
+  'hobbies.cycling': 'Cycling',
+  'hobbies.cycling.intro': 'Cycling is a way of freedom and exploration. Gliding through the wind, feeling the rise and fall of the land and the pulse of the city — every ride is a conversation with the world. Whether winding mountain paths or city streets, every journey beneath the pedals is worth recording.',
 }

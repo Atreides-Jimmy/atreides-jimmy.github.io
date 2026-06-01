@@ -7,6 +7,8 @@ import About from "@/pages/About";
 import Hobbies from "@/pages/Hobbies";
 import GoHobby from "@/pages/GoHobby";
 import GoGameDetail from "@/pages/GoGameDetail";
+import CyclingHobby from "@/pages/CyclingHobby";
+import CyclingRideDetail from "@/pages/CyclingRideDetail";
 
 export default function App() {
   return (
@@ -18,6 +20,8 @@ export default function App() {
           <Route path="/hobbies" element={<Hobbies />} />
           <Route path="/hobbies/go" element={<GoHobby />} />
           <Route path="/hobbies/go/:id" element={<GoGameDetail />} />
+          <Route path="/hobbies/cycling" element={<CyclingHobby />} />
+          <Route path="/hobbies/cycling/:id" element={<CyclingRideDetail />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
         </Route>

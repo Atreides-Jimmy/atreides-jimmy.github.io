@@ -1,12 +1,17 @@
 import { useLangStore } from '@/store/langStore'
 import { Link } from 'react-router-dom'
-import { CircleDot, ChevronRight } from 'lucide-react'
+import { CircleDot, Bike, ChevronRight } from 'lucide-react'
 
 const hobbyItems = [
   {
     id: 'go',
     key: 'hobbies.go',
     icon: CircleDot,
+  },
+  {
+    id: 'cycling',
+    key: 'hobbies.cycling',
+    icon: Bike,
   },
 ]
 

@@ -1,1 +1,11 @@
-[]
+[
+  {
+    "id": "周日上海漫游",
+    "folder": "周日上海漫游",
+    "routeImage": "行程图.jpg",
+    "reviewFile": "评.md",
+    "title": { "zh": "周日上海漫游", "en": "Sunday Cycling in Shanghai", "ru": "Воскресенье: Велопрогулка по Шанхаю" },
+    "date": "2026-05-31",
+    "distance": "115.86 km"
+  }
+]

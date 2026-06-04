@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { useLangStore } from '@/store/langStore'
 import GoBoard from '@/components/GoBoard'
+import MarkdownRenderer from '@/components/MarkdownRenderer'
 import { ArrowLeft } from 'lucide-react'
 
 interface GoGameEntry {
@@ -21,6 +22,8 @@ export default function GoGameDetail() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(false)
 
+  const [basePath, setBasePath] = useState('')
+
   useEffect(() => {
     async function loadGame() {
       try {
@@ -34,6 +37,7 @@ export default function GoGameDetail() {
         }
 
         setTitle(entry.title[lang])
+        setBasePath(`/sgf/${entry.folder}`)
 
         const [sgfRes, reviewRes] = await Promise.all([
           fetch(`/sgf/${entry.folder}/${entry.sgfFile}`),
@@ -95,9 +99,7 @@ export default function GoGameDetail() {
         {reviewContent && (
           <div className="poem-frame">
             <div className="poem-frame-inner relative">
-              <p className="font-body text-sand-50/70 leading-relaxed whitespace-pre-line">
-                {reviewContent}
-              </p>
+              <MarkdownRenderer content={reviewContent} basePath={basePath} />
             </div>
           </div>
         )}

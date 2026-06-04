@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { useLangStore } from '@/store/langStore'
+import MarkdownRenderer from '@/components/MarkdownRenderer'
 import { ArrowLeft } from 'lucide-react'
 
 interface RideEntry {
@@ -19,6 +20,7 @@ export default function CyclingRideDetail() {
   const [title, setTitle] = useState('')
   const [routeImage, setRouteImage] = useState('')
   const [reviewContent, setReviewContent] = useState('')
+  const [basePath, setBasePath] = useState('')
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(false)
 
@@ -36,6 +38,7 @@ export default function CyclingRideDetail() {
 
         setTitle(entry.title[lang])
         setRouteImage(`/cycling/${entry.folder}/${entry.routeImage}`)
+        setBasePath(`/cycling/${entry.folder}`)
 
         if (entry.reviewFile) {
           try {
@@ -106,9 +109,7 @@ export default function CyclingRideDetail() {
         {reviewContent && (
           <div className="poem-frame">
             <div className="poem-frame-inner relative">
-              <p className="font-body text-sand-50/70 leading-relaxed whitespace-pre-line">
-                {reviewContent}
-              </p>
+              <MarkdownRenderer content={reviewContent} basePath={basePath} />
             </div>
           </div>
         )}

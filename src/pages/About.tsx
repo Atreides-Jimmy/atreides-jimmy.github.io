@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useLangStore } from '@/store/langStore'
+import MarkdownRenderer from '@/components/MarkdownRenderer'
 
 export default function About() {
   const { lang, t } = useLangStore()
@@ -54,9 +55,7 @@ export default function About() {
         ) : (
           <div className="poem-frame">
             <div className="poem-frame-inner relative">
-              <div className="font-body text-sand-50/70 leading-relaxed whitespace-pre-line text-center">
-                {content}
-              </div>
+              <MarkdownRenderer content={content} basePath="/about" />
             </div>
           </div>
         )}

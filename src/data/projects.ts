@@ -38,6 +38,6 @@ export const projects: Project[] = [
       ru: 'Интерактивный обучающий инструмент на базе PyQt5 и PyQtGraph для визуализации алгоритмов поиска на поверхности потенциальной энергии (PES). Он поддерживает рендеринг в реальном времени с двух ракурсов (2D-контуры и 3D-поверхности) и охватывает множество алгоритмов поиска и типов PES.',
     },
     tech: ['Python', 'PES', 'Search Algorithm'],
-    url: 'https://github.com/Atreides-Jimmy/PES-Visualizer',
+    url: 'https://github.com/Atreides-Jimmy/pes_visualizer',
   },
 ]
